@@ -1,0 +1,20 @@
+{
+  "name": "RecipeKeeper",
+  "version": "1.0.0",
+  "description": "React Recipe Keeper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackieHodges/RecipeKeeper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JackieHodges/RecipeKeeper/issues"
+  },
+  "homepage": "https://github.com/JackieHodges/RecipeKeeper#readme"
+}
