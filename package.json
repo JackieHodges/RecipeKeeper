@@ -4,7 +4,8 @@
   "description": "React Recipe Keeper",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/JackieHodges/RecipeKeeper/issues"
   },
-  "homepage": "https://github.com/JackieHodges/RecipeKeeper#readme"
+  "homepage": "https://github.com/JackieHodges/RecipeKeeper#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.4"
+  }
 }
