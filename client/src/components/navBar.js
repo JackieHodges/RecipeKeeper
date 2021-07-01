@@ -18,7 +18,10 @@ function NavBar() {
                             <a className="nav-link" href="/myRecipes">My Recipes</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Search</a>
+                            <a className="nav-link" href="/thisWeeksMeals">This Week's Meals</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/searchRecipes">Search</a>
                         </li>
                     </ul>
                 </div>
