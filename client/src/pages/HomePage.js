@@ -1,10 +1,30 @@
 import React from "react";
+import { Row, Col } from "react-bootstrap"
+import GroceryList from "../components/groceryList";
+import ThisWeek from "../components/thisWeeksMeals";
 
 function HomePage() {
 
     return (
         <div>
-            This is the homepage
+            <Row className="justify-content-md-center">
+                <Col>
+                    <h1>Welcome to your Recipe Box</h1>
+                    <h5>Here you can store recipes, search through your recipes, and create a meal plan/shopping list</h5>
+                </Col>
+            </Row>
+            <br />
+            <Row>
+                {/* <Col>
+                    <SearchRecipe />
+                </Col> */}
+                <Col>
+                    <GroceryList />
+                </Col>
+                <Col>
+                    <ThisWeek />
+                </Col>
+            </Row>
         </div>
     )
 

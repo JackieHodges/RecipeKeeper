@@ -6,7 +6,6 @@ function SearchRecipe() {
     return (
         <div>
             <Row>
-                <Col></Col>
                 <Col>
                     <h2>Search for Recipe</h2>
                     <Form>
@@ -31,7 +30,6 @@ function SearchRecipe() {
                         </Button>
                     </Form>
                 </Col>
-                <Col></Col>
             </Row>
         </div>
     )
