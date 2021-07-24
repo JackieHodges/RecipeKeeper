@@ -19,8 +19,8 @@ Recipes.belongsToMany(User, {
 
 // User.hasMany(Recipes);
 // Recipes.belongsToMany(User);
-// User.hasOne(WeeklyMeals);
-// WeeklyMeals.belongsTo(User);
+User.hasOne(WeeklyMeals);
+WeeklyMeals.belongsTo(User);
 Recipes.hasMany(Tags);
 Tags.belongsTo(Recipes);
 
