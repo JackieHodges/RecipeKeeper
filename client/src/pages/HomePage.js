@@ -1,19 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Row, Col } from "react-bootstrap"
-import API from "../utils/API";
 import GroceryList from "../components/groceryList";
 import ThisWeek from "../components/thisWeeksMeals";
 
 function HomePage() {
-
-    useEffect(() => {
-        loadAllRecipes();
-    })
-
-    function loadAllRecipes(){
-        API.getRecipes()
-        .then(res => console.log(res.data))
-    }
 
     return (
         <div>
