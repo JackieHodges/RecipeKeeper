@@ -10,9 +10,9 @@ function ThisWeek() {
                 {weekDay.map((value, index) => {
                     return (
                         <div>
-                        <Row >
+                        <Row key={index} >
 
-                            <Col key={index} className="justify-content-md-center">
+                            <Col className="justify-content-md-center">
                                 {value}
                                 <Card>
                                     <Card.Body>This is the recipe name</Card.Body>
