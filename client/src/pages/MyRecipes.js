@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import NewRecipe from "../components/newRecipe";
 import RecipeCard from "../components/recipeCard";
 import API from "../utils/API";
 
@@ -9,7 +10,7 @@ function MyRecipes() {
 
     useEffect(() => {
         loadAllRecipes();
-    }, [])
+    }, [myRecipes])
 
     function loadAllRecipes() {
         API.getRecipes()
@@ -22,6 +23,11 @@ function MyRecipes() {
             <Container>
                 <Row>
                     <Col>My Recipes</Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <NewRecipe />
+                    </Col>
                 </Row>
                 {myRecipes.map(recipe =>
                     <Row key={recipe.id} >

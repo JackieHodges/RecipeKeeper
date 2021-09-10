@@ -2,6 +2,8 @@ import React from "react";
 import { Row, Col } from "react-bootstrap"
 import GroceryList from "../components/groceryList";
 import ThisWeek from "../components/thisWeeksMeals";
+import NewRecipe from "../components/newRecipe";
+
 
 function HomePage() {
 
@@ -14,6 +16,11 @@ function HomePage() {
                 </Col>
             </Row>
             <br />
+            <Row className="justify-content-md-center">
+                <Col>
+                    <NewRecipe />
+                </Col>
+            </Row>
             <Row>
                 {/* <Col>
                     <SearchRecipe />
