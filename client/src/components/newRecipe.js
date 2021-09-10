@@ -4,15 +4,6 @@ import API from "../utils/API";
 
 function NewRecipe() {
 
-    function handleInputChange(event){
-        let {id, value} = event.target;
-        // console.log(`this is the id ${id} and value ${value}`)
-        // let recipeName = document.getElementById("formRecipe")
-        // console.log(`this is the recipe name ${recipeName.value}`)
-        // let recipeURL = document.getElementById("formRecipeURL")
-        // console.log(`this is the recipeURL ${recipeURL.value}`)
-    }
-
     function onClick(event){
         event.preventDefault();
         let recipeName = document.getElementById("formRecipe").value;
@@ -34,7 +25,7 @@ function NewRecipe() {
                 <Col></Col>
                 <Col>
                     <Form>
-                        <Form.Group controlId="formRecipe" onChange={handleInputChange}>
+                        <Form.Group controlId="formRecipe">
                             <Form.Label>Recipe Name</Form.Label>
                             <Form.Control type="text" placeholder="Recipe Name" />
                             <Form.Text className="text-muted">
@@ -50,7 +41,7 @@ function NewRecipe() {
                             </Form.Text>
                         </Form.Group> */}
 
-                        <Form.Group controlId="formRecipeURL" onChange={handleInputChange}>
+                        <Form.Group controlId="formRecipeURL">
                             <Form.Label>Recipe URL</Form.Label>
                             <Form.Control type="text" placeholder="Recipe URL" />
                         </Form.Group>

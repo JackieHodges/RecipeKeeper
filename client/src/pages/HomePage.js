@@ -16,11 +16,6 @@ function HomePage() {
                 </Col>
             </Row>
             <br />
-            <Row className="justify-content-md-center">
-                <Col>
-                    <NewRecipe />
-                </Col>
-            </Row>
             <Row>
                 {/* <Col>
                     <SearchRecipe />
