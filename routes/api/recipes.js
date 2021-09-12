@@ -5,4 +5,7 @@ router.route("/")
   .get(recipeController.getAllRecipes)
   .post(recipeController.addNewRecipe)
 
+router.route("/find")
+  .post(recipeController.findRecipe)
+
 module.exports = router;

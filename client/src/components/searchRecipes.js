@@ -1,7 +1,21 @@
 import React from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
+import API from "../utils/API"
 
 function SearchRecipe() {
+
+    function onClick(event){
+        event.preventDefault();
+        let recipeName = document.getElementById("formRecipe").value;
+        console.log(`this is recipeName ${recipeName}`)
+
+        API.findRecipe({
+            recipe_name: recipeName,
+        })
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err));
+
+    }
 
     return (
         <div>
@@ -17,15 +31,15 @@ function SearchRecipe() {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group controlId="formRecipeTag">
+                        {/* <Form.Group controlId="formRecipeTag">
                             <Form.Label>Recipe Tags</Form.Label>
                             <Form.Control as="textarea" placeholder="Recipe Tags" />
                             <Form.Text className="text-muted">
                                 Search by tag.
                             </Form.Text>
-                        </Form.Group>
+                        </Form.Group> */}
 
-                        <Button variant="primary" type="submit">
+                        <Button onClick={onClick} variant="primary" type="submit">
                             Submit
                         </Button>
                     </Form>

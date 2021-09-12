@@ -8,5 +8,8 @@ export default {
   },
   addNewRecipe: function (recipeData) {
     return axios.post("/api/recipes/", recipeData)
+  },
+  findRecipe: function (recipeData) {
+    return axios.post("/api/recipes/find/", recipeData)
   }
 };

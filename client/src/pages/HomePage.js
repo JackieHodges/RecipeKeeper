@@ -3,6 +3,7 @@ import { Row, Col } from "react-bootstrap"
 import GroceryList from "../components/groceryList";
 import ThisWeek from "../components/thisWeeksMeals";
 import NewRecipe from "../components/newRecipe";
+import SearchRecipe from "../components/searchRecipes";
 
 
 function HomePage() {
@@ -17,9 +18,9 @@ function HomePage() {
             </Row>
             <br />
             <Row>
-                {/* <Col>
+                <Col>
                     <SearchRecipe />
-                </Col> */}
+                </Col>
                 <Col>
                     <GroceryList />
                 </Col>
