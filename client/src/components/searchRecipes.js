@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import API from "../utils/API"
+import ModalResults from "./modalResults";
 
 function SearchRecipe() {
+
+    const [show, setShow] = useState(false);
+    const [searchResults, setSearchResults] = useState([]);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     function onClick(event){
         event.preventDefault();
@@ -12,7 +19,8 @@ function SearchRecipe() {
         API.findRecipe({
             recipe_name: recipeName,
         })
-        .then(res => console.log(res.data))
+        .then(res => setSearchResults(res.data))
+        .then(handleShow())
         .catch(err => console.log(err));
 
     }
@@ -45,6 +53,7 @@ function SearchRecipe() {
                     </Form>
                 </Col>
             </Row>
+            <ModalResults show={show} handleClose={handleClose} handleShow={handleShow} data={searchResults} />
         </div>
     )
 }
