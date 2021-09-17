@@ -1,7 +1,12 @@
-import React from "react";
-import { ListGroup } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, ListGroup, Modal } from "react-bootstrap";
 
 function ListedResults(props) {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     if (props.data.length === 0) {
         return (
@@ -13,9 +18,21 @@ function ListedResults(props) {
                 <ListGroup>
                     {props.data.map(data => (
                         <div>
-                            <ListGroup.Item key={data.id} action href="/recipe/">
+                            <ListGroup.Item key={data.id} onClick={handleShow}>
                                 {data.recipe_name}
                             </ListGroup.Item>
+
+                            <Modal show={show} onHide={handleClose}>
+                                <Modal.Header closeButton>
+                                    <Modal.Title>{data.recipe_name}</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body><a href={data.recipe_url} target="_blank">Recipe can be found here</a></Modal.Body>
+                                <Modal.Footer>
+                                    <Button variant="secondary" onClick={handleClose}>
+                                        Close
+                                    </Button>
+                                </Modal.Footer>
+                            </Modal>
                         </div>
                     ))}
                 </ListGroup>

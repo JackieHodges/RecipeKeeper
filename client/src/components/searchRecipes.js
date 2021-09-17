@@ -54,7 +54,7 @@ function SearchRecipe() {
                 </Col>
             </Row>
             <br />
-            <ListedResults show={show} handleClose={handleClose} handleShow={handleShow} data={searchResults} />
+            <ListedResults show={show} data={searchResults} />
         </div>
     )
 }
