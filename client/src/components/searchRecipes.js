@@ -8,7 +8,6 @@ function SearchRecipe() {
     const [show, setShow] = useState(false);
     const [searchResults, setSearchResults] = useState([]);
 
-    const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     function onClick(event){

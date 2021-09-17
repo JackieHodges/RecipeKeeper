@@ -8,4 +8,7 @@ router.route("/")
 router.route("/find")
   .post(recipeController.findRecipe)
 
+router.route("/:id")
+  .get(recipeController.findSpecificRecipe)
+
 module.exports = router;

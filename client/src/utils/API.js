@@ -11,5 +11,8 @@ export default {
   },
   findRecipe: function (recipeData) {
     return axios.post("/api/recipes/find/", recipeData)
+  },
+  getSpecificRecipe: function (recipeData) {
+    return axios.get("/api/recipes/" + recipeData)
   }
 };

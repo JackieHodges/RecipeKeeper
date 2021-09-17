@@ -6,6 +6,7 @@ import NavBar from "./components/navBar";
 import MyRecipes from "./pages/MyRecipes";
 import SearchRecipe from "./components/searchRecipes";
 import ThisWeek from "./components/thisWeeksMeals";
+import SpecificRecipe from "./pages/SpecificRecipe";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={ HomePage } />
           <Route exact path="/myRecipes" component={ MyRecipes } />
+          <Route exact path="/myRecipes/:id" component={ SpecificRecipe } />
           <Route exact path="/searchRecipes" component={ SearchRecipe } />
           <Route exact path="/thisWeeksMeals" component={ ThisWeek } />
         </Switch>
