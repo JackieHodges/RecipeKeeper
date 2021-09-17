@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import API from "../utils/API"
-import ModalResults from "./modalResults";
+import ListedResults from "./listedResults";
 
 function SearchRecipe() {
 
@@ -53,7 +53,8 @@ function SearchRecipe() {
                     </Form>
                 </Col>
             </Row>
-            <ModalResults show={show} handleClose={handleClose} handleShow={handleShow} data={searchResults} />
+            <br />
+            <ListedResults show={show} handleClose={handleClose} handleShow={handleShow} data={searchResults} />
         </div>
     )
 }
