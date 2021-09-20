@@ -12,11 +12,11 @@ function ListedResults(props) {
             <div>
                 <ListGroup>
                     {props.data.map(data => (
-                        <div>
-                            <ListGroup.Item key={data.id} action href={'/myRecipes/' + data.id}>
-                                {data.recipe_name}
-                            </ListGroup.Item>
-                        </div>
+
+                        <ListGroup.Item key={data.id} action href={'/myRecipes/' + data.id}>
+                            {data.recipe_name}
+                        </ListGroup.Item>
+
                     ))}
                 </ListGroup>
             </div>

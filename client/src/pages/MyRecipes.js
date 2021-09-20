@@ -1,22 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import NewRecipe from "../components/newRecipe";
-import RecipeCard from "../components/recipeCard";
-import API from "../utils/API";
+import SearchRecipe from "../components/searchRecipes";
 
 function MyRecipes() {
-
-    const [myRecipes, setMyRecipes] = useState([]);
-
-    useEffect(() => {
-        loadAllRecipes();
-    }, [myRecipes])
-
-    function loadAllRecipes() {
-        API.getRecipes()
-            .then(res => setMyRecipes(res.data))
-            .catch(err => console.log(err));
-    }
 
     return (
         <div>
@@ -25,15 +12,13 @@ function MyRecipes() {
                     <Col>My Recipes</Col>
                 </Row>
                 <Row>
-                    <Col>
+                    {/* <Col>
                         <NewRecipe />
+                    </Col> */}
+                    <Col>
+                        <SearchRecipe />
                     </Col>
                 </Row>
-                {myRecipes.map(recipe =>
-                    <Row key={recipe.id} >
-                        <RecipeCard recipe={recipe} />
-                    </Row>
-                )}
             </Container>
         </div>
     )

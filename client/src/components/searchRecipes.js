@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import API from "../utils/API"
 import ListedResults from "./listedResults";
@@ -9,6 +9,16 @@ function SearchRecipe() {
     const [searchResults, setSearchResults] = useState([]);
 
     const handleShow = () => setShow(true);
+
+    useEffect(() => {
+        loadAllRecipes();
+    }, [])
+
+    function loadAllRecipes() {
+        API.getRecipes()
+            .then(res => setSearchResults(res.data))
+            .catch(err => console.log(err));
+    }
 
     function onClick(event){
         event.preventDefault();
