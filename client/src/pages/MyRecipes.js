@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Row, Col, ListGroup } from "react-bootstrap";
-import NewRecipe from "../components/newRecipe";
+import { Container, Row, Col } from "react-bootstrap";
 import SearchRecipe from "../components/searchRecipes";
 
 function MyRecipes() {

@@ -4,7 +4,7 @@ import API from "../utils/API";
 
 function NewRecipe() {
 
-    function onClick(event){
+    function onClick(event) {
         event.preventDefault();
         let recipeName = document.getElementById("formRecipe").value;
         console.log(`this is the recipe name ${recipeName.value}`);
@@ -15,7 +15,7 @@ function NewRecipe() {
             recipe_name: recipeName,
             recipe_url: recipeURL
         })
-        .catch(err => console.log(err));
+            .catch(err => console.log(err));
 
     }
 
