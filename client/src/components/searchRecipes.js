@@ -32,7 +32,6 @@ function SearchRecipe() {
             recipe_name: recipeName,
         })
             .then(res => setSearchResults(res.data))
-            // .then(handleShow())
             .catch(err => console.log(err));
 
     }
@@ -40,7 +39,6 @@ function SearchRecipe() {
     function onSubmit(event) {
         event.preventDefault();
         let recipeName = document.getElementById("formRecipe").value;
-
         console.log(`this is the new recipe name ${recipeName}`);
         handleShow();
     }
@@ -48,14 +46,14 @@ function SearchRecipe() {
     function onClick(event) {
         event.preventDefault();
         let newRecipeName = document.getElementById("newFormRecipe").value;
-        console.log(`this is the recipe name ${newRecipeName.value}`);
         let newRecipeURL = document.getElementById("newFormRecipeURL").value;
-        console.log(`this is the recipeURL ${newRecipeURL.value}`);
 
         API.addNewRecipe({
             recipe_name: newRecipeName,
             recipe_url: newRecipeURL
         })
+            .then(handleClose())
+            .then(loadAllRecipes())
             .catch(err => console.log(err));
     }
 
