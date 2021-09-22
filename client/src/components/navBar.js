@@ -1,4 +1,5 @@
 import React from "react";
+import LoginButton from "./loginButton";
 
 function NavBar() {
 
@@ -22,6 +23,9 @@ function NavBar() {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="/searchRecipes">Search</a>
+                        </li>
+                        <li className="nav-item">
+                            <LoginButton />
                         </li>
                     </ul>
                 </div>
