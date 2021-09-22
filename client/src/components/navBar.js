@@ -1,5 +1,6 @@
 import React from "react";
 import LoginButton from "./loginButton";
+import LogoutButton from "./logoutButton"
 
 function NavBar() {
 
@@ -26,6 +27,9 @@ function NavBar() {
                         </li>
                         <li className="nav-item">
                             <LoginButton />
+                        </li>
+                        <li className="nav-item">
+                            <LogoutButton />
                         </li>
                     </ul>
                 </div>
