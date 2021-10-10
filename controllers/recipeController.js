@@ -18,6 +18,19 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  updateRecipe: function (req, res) {
+    db.Recipes
+      .update({
+        recipe_name: req.body.recipe_name,
+        recipe_url: req.body.recipe_url
+      }, {
+        where: {
+          id: req.body.recipe_id
+        }
+      })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   findRecipe: function (req, res) {
     db.Recipes
       .findAll({

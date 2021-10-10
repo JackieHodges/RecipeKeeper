@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Form, Button, Row, Col, Modal } from "react-bootstrap";
 import API from "../utils/API"
 import ListedResults from "./listedResults";
-import NewRecipe from "../components/newRecipe"
 
 function SearchRecipe() {
 
