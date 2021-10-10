@@ -31,6 +31,16 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  deleteRecipe: function (req, res) {
+    db.Recipes
+      .destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   findRecipe: function (req, res) {
     db.Recipes
       .findAll({

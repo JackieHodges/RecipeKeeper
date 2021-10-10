@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button, Modal, Form } from "react-bootstrap";
 import { useParams } from "react-router";
-import NewRecipe from "../components/newRecipe";
-import RecipeCard from "../components/recipeCard";
 import API from "../utils/API";
+import { useHistory } from 'react-router-dom';
 
 function SpecificRecipe() {
 
@@ -15,6 +14,8 @@ function SpecificRecipe() {
     const handleClose = () => setShow(false);
 
     const { id } = useParams();
+
+    const history = useHistory();
 
     useEffect(() => {
         console.log(`this is the recipeID ${id}`)
@@ -47,7 +48,14 @@ function SpecificRecipe() {
             .then(handleClose)
             .then(window.location.reload(false))
             .catch(err => console.log(err));
+    }
 
+    function deleteRecipe(event) {
+        event.preventDefault();
+
+        API.deleteRecipe(currentRecipe.id)
+            .then(history.push('/myRecipes'))
+            .catch(err => console.log(err));
     }
 
     return (
@@ -60,16 +68,19 @@ function SpecificRecipe() {
                 </Row>
                 <Row>
                     <Col>
-                        <a href={currentRecipe.recipe_url}>Website of Recipe</a>
+                        <Button onClick={handleShow}>Edit</Button>
                     </Col>
                     <Col>
-                        <Button onClick={handleShow}>Edit Meal</Button>
+                        <Button variant={favoriteRecipe} onClick={onClick}>Favorite</Button>
                     </Col>
                     <Col>
-                        <Button variant={favoriteRecipe} onClick={onClick}>Favorite Meal</Button>
+                        <Button variant="outline-danger" onClick={deleteRecipe}>Delete</Button>
                     </Col>
                 </Row>
                 <Row>
+                    <Col>
+                        <a href={currentRecipe.recipe_url}>Website of Recipe</a>
+                    </Col>
                     <Col>
                         Servings
                     </Col>

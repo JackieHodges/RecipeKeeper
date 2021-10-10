@@ -11,5 +11,6 @@ router.route("/find")
 
 router.route("/:id")
   .get(recipeController.findSpecificRecipe)
+  .delete(recipeController.deleteRecipe)
 
 module.exports = router;
