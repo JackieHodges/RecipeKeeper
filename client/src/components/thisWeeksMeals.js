@@ -4,7 +4,7 @@ function ThisWeek() {
 
     return (
         <div>
-            Meals that are favorited will be shown here.
+            <h2>Meals that are favorited will be shown here.</h2>
         </div>
     )
 }

@@ -68,22 +68,25 @@ function SpecificRecipe() {
     function IngredientsList() {
         if (currentRecipe.ingredients) {
             return (
-                currentRecipe.ingredients.map(ingredient =>
-                    <Row key={ingredient.id}>
-                        <p>{ingredient}</p>
-                    </Row>
-                )
+                <>
+                    <h3>Ingredients</h3>
+                    {currentRecipe.ingredients.map(ingredient =>
+                        <Row style={{justifyContent:"center"}} key={ingredient.id}>
+                            <h4>{ingredient}</h4>
+                        </Row>
+                    )}
+                </>
             )
         } else {
-            return <p>No Ingredients Listed</p>
+            return <h4>No Ingredients Listed</h4>
         }
     }
 
     function ServingNumber() {
         if (currentRecipe.servings) {
-            return <p key={currentRecipe.id}>{currentRecipe.servings}</p>
+            return <h4 key={currentRecipe.id}>{currentRecipe.servings}</h4>
         } else {
-            return <p>No Servings Listed</p>
+            return <h4>No Servings Listed</h4>
         }
     }
 
@@ -108,14 +111,13 @@ function SpecificRecipe() {
                 </Row>
                 <Row>
                     <Col>
-                        <a href={currentRecipe.recipe_url}>Website of Recipe</a>
+                        <h3><a href={currentRecipe.recipe_url}>Website of Recipe</a></h3>
                     </Col>
                     <Col>
-                        Servings
+                        <h3>Servings</h3>
                         <ServingNumber />
                     </Col>
                     <Col>
-                        Ingredients
                         <IngredientsList />
                     </Col>
                 </Row>

@@ -7,10 +7,14 @@ function GroceryList() {
         <div>
             <Container>
                 <Row>
-                    <Col>This is my Groceries</Col>
+                    <Col>
+                        <h2>This is my Groceries</h2>
+                    </Col>
                 </Row>
                 <Row>
-                    <Col>Ingredient 1</Col>
+                    <Col>
+                        <h3>Ingredient 1</h3>
+                    </Col>
                 </Row>
             </Container>
         </div>
