@@ -61,7 +61,7 @@ function SearchRecipe() {
             <Row>
                 <Col>
                     <h2>Search for Recipe</h2>
-                    <Form>
+                    <Form autocomplete="off">
                         <Form.Group onChange={onChange} controlId="formRecipe">
                             <Form.Label>Recipe Name</Form.Label>
                             <Form.Control type="text" placeholder="Recipe Name" />

@@ -93,7 +93,7 @@ function SpecificRecipe() {
                         <Modal.Title>Edit this Recipe</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Form>
+                        <Form autocomplete="off">
                             <Form.Group controlId="newFormRecipe">
                                 <Form.Label>Recipe Name</Form.Label>
                                 <Form.Control type="text" defaultValue={currentRecipe.recipe_name} />
