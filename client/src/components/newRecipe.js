@@ -27,7 +27,7 @@ function NewRecipe() {
                     <Form autocomplete="off">
                         <Form.Group controlId="formRecipe">
                             <Form.Label>Recipe Name</Form.Label>
-                            <Form.Control autocomplete="off" type="text" placeholder="Recipe Name" />
+                            <Form.Control type="text" placeholder="Recipe Name" />
                             <Form.Text className="text-muted">
                                 You can name the recipe whatever you would like.
                             </Form.Text>
@@ -43,7 +43,7 @@ function NewRecipe() {
 
                         <Form.Group controlId="formRecipeURL">
                             <Form.Label>Recipe URL</Form.Label>
-                            <Form.Control autocomplete="off" type="text" placeholder="Recipe URL" />
+                            <Form.Control type="text" placeholder="Recipe URL" />
                         </Form.Group>
 
                         <Button onClick={onClick} variant="primary" type="submit">

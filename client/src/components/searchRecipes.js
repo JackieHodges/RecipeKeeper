@@ -95,7 +95,7 @@ function SearchRecipe() {
                     <Modal.Title>Add New Recipe</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
+                    <Form autocomplete="off">
                         <Form.Group controlId="newFormRecipe">
                             <Form.Label>Recipe Name</Form.Label>
                             <Form.Control type="text" placeholder="Recipe Name" />

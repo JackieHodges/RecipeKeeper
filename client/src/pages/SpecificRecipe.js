@@ -53,7 +53,7 @@ function SpecificRecipe() {
             ingredients: ingredientList
         })
             .then(handleClose)
-            .then(window.location.reload(false))
+            .then(window.location.reload(true))
             .catch(err => console.log(err));
     }
 
