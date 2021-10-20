@@ -111,7 +111,7 @@ function SpecificRecipe() {
                 </Row>
                 <Row>
                     <Col>
-                        <h3><a href={currentRecipe.recipe_url}>Website of Recipe</a></h3>
+                        <h3><a rel="noreferrer" target="_blank" href={currentRecipe.recipe_url}>Website of Recipe</a></h3>
                     </Col>
                     <Col>
                         <h3>Servings</h3>
