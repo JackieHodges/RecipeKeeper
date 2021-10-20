@@ -52,6 +52,7 @@ function SpecificRecipe() {
             servings: servingNumber,
             ingredients: ingredientList
         })
+            .then(res => console.log(res.data))
             .then(handleClose)
             .then(window.location.reload(true))
             .catch(err => console.log(err));
@@ -71,7 +72,7 @@ function SpecificRecipe() {
                 <>
                     <h3>Ingredients</h3>
                     {currentRecipe.ingredients.map(ingredient =>
-                        <Row style={{justifyContent:"center"}} key={ingredient.id}>
+                        <Row style={{ justifyContent: "center" }} key={ingredient.id}>
                             <h4>{ingredient}</h4>
                         </Row>
                     )}

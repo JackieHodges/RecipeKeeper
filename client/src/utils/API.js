@@ -10,7 +10,7 @@ export default {
     return axios.post("/api/recipes/", recipeData)
   },
   updateRecipe: function (recipeData) {
-    return axios.put("/api/recipes/", recipeData)
+    return axios.post("/api/recipes/update", recipeData)
   },
   deleteRecipe: function (recipeData) {
     return axios.delete("/api/recipes/" + recipeData)
