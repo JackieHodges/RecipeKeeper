@@ -33,7 +33,7 @@ function SpecificRecipe() {
             event.target.innerHTML = "Favorited";
         } else {
             setFavoriteRecipe("secondary")
-            event.target.innerHTML = "Favorite Meal";
+            event.target.innerHTML = "Favorite";
         }
     }
 
@@ -41,11 +41,16 @@ function SpecificRecipe() {
         event.preventDefault();
         let recipeName = document.getElementById("newFormRecipe").value;
         let recipeURL = document.getElementById("newFormRecipeURL").value;
+        let ingredientList = document.getElementById("ingredientsList").value;
+        let servingNumber = document.getElementById("numberOfServings").value;
 
+        console.log(ingredientList)
         API.updateRecipe({
             recipe_id: currentRecipe.id,
             recipe_name: recipeName,
-            recipe_url: recipeURL
+            recipe_url: recipeURL,
+            servings: servingNumber,
+            ingredients: ingredientList
         })
             .then(handleClose)
             .then(window.location.reload(false))
@@ -74,6 +79,14 @@ function SpecificRecipe() {
         }
     }
 
+    function ServingNumber() {
+        if (currentRecipe.servings) {
+            return <p key={currentRecipe.id}>{currentRecipe.servings}</p>
+        } else {
+            return <p>No Servings Listed</p>
+        }
+    }
+
     return (
         <div>
             <Container>
@@ -99,6 +112,7 @@ function SpecificRecipe() {
                     </Col>
                     <Col>
                         Servings
+                        <ServingNumber />
                     </Col>
                     <Col>
                         Ingredients
@@ -128,6 +142,17 @@ function SpecificRecipe() {
                                 <Form.Label>Recipe URL</Form.Label>
                                 <Form.Control type="text" defaultValue={currentRecipe.recipe_url} />
                             </Form.Group>
+
+                            <Form.Group controlId="numberOfServings">
+                                <Form.Label>Servings</Form.Label>
+                                <Form.Control type="text" defaultValue={currentRecipe.servings} />
+                            </Form.Group>
+
+                            <Form.Group controlId="ingredientsList">
+                                <Form.Label>Ingredients</Form.Label>
+                                <Form.Control type="text" defaultValue={currentRecipe.ingredients} />
+                            </Form.Group>
+
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>

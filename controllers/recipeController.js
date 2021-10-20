@@ -19,10 +19,13 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   updateRecipe: function (req, res) {
+    let ingredientsArray = req.body.ingredients.split(",")
     db.Recipes
       .update({
         recipe_name: req.body.recipe_name,
-        recipe_url: req.body.recipe_url
+        recipe_url: req.body.recipe_url,
+        servings: req.body.servings,
+        ingredients: ingredientsArray
       }, {
         where: {
           id: req.body.recipe_id
