@@ -24,6 +24,8 @@ function SpecificRecipe() {
             .catch(err => console.log(err));
     }, [])
 
+    console.log(currentRecipe)
+
     function onClick(event) {
         event.preventDefault();
         if (favoriteRecipe === "secondary") {
@@ -58,6 +60,20 @@ function SpecificRecipe() {
             .catch(err => console.log(err));
     }
 
+    function IngredientsList() {
+        if (currentRecipe.ingredients) {
+            return (
+                currentRecipe.ingredients.map(ingredient =>
+                    <Row key={ingredient.id}>
+                        <p>{ingredient}</p>
+                    </Row>
+                )
+            )
+        } else {
+            return <p>No Ingredients Listed</p>
+        }
+    }
+
     return (
         <div>
             <Container>
@@ -86,6 +102,7 @@ function SpecificRecipe() {
                     </Col>
                     <Col>
                         Ingredients
+                        <IngredientsList />
                     </Col>
                 </Row>
                 <Modal show={show} onHide={handleClose}>

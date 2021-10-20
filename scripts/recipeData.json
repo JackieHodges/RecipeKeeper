@@ -1,7 +1,9 @@
 [
     {
         "recipe_name": "Picnic Style Brie and Prosciutto Sandwich.",
-        "recipe_url": "https://www.halfbakedharvest.com/brie-and-prosciutto-sandwich/"
+        "recipe_url": "https://www.halfbakedharvest.com/brie-and-prosciutto-sandwich/",
+        "servings": 6,
+        "ingredients": ["apple", "brie"]
     },
     {
         "recipe_name": "Frosted Watermelon Rosemary Frosé",

@@ -18,6 +18,14 @@ Recipe.init(
         recipe_url: {
             type: DataTypes.STRING,
             allowNull: true
+        },
+        servings: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        ingredients: {
+            type: DataTypes.JSON,
+            allowNull: true
         }
     },
     {
