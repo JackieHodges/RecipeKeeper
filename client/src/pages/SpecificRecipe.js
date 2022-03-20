@@ -91,6 +91,14 @@ function SpecificRecipe() {
         }
     }
 
+    function RecipeLocation() {
+        if(currentRecipe.recipe_media === "website"){
+           return  <h3><a rel="noreferrer" target="_blank" href={currentRecipe.recipe_location}>Website of Recipe</a></h3>
+        } else {
+            return <h3>{currentRecipe.recipe_location}</h3>
+        }
+    }
+
     return (
         <div>
             <Container>
@@ -112,7 +120,8 @@ function SpecificRecipe() {
                 </Row>
                 <Row>
                     <Col>
-                        <h3><a rel="noreferrer" target="_blank" href={currentRecipe.recipe_url}>Website of Recipe</a></h3>
+                    <RecipeLocation />
+                        {/* <h3><a rel="noreferrer" target="_blank" href={currentRecipe.recipe_url}>Website of Recipe</a></h3> */}
                     </Col>
                     <Col>
                         <h3>Servings</h3>

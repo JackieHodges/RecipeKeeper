@@ -13,7 +13,8 @@ module.exports = {
     db.Recipes
       .create({
         recipe_name: req.body.recipe_name,
-        recipe_url: req.body.recipe_url
+        recipe_media: req.body.recipe_media,
+        recipe_location: req.body.recipe_location
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

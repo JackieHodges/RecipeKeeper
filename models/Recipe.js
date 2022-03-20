@@ -15,7 +15,11 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        recipe_url: {
+        recipe_location: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        recipe_media: {
             type: DataTypes.STRING,
             allowNull: true
         },

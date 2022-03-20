@@ -1,16 +1,19 @@
 [
     {
         "recipe_name": "Picnic Style Brie and Prosciutto Sandwich.",
-        "recipe_url": "https://www.halfbakedharvest.com/brie-and-prosciutto-sandwich/",
+        "recipe_location": "https://www.halfbakedharvest.com/brie-and-prosciutto-sandwich/",
+        "recipe_media": "website",
         "servings": 6,
         "ingredients": ["apple", "brie"]
     },
     {
         "recipe_name": "Frosted Watermelon Rosemary Frosé",
-        "recipe_url": "https://www.halfbakedharvest.com/watermelon-rosemary-frose/"
+        "recipe_media": "website",
+        "recipe_location": "https://www.halfbakedharvest.com/watermelon-rosemary-frose/"
     },
     {
         "recipe_name": "Boiled Water",
-        "recipe_url": "https://www.food.com/recipe/boiled-water-422354"
+        "recipe_media": "website",
+        "recipe_location": "https://www.food.com/recipe/boiled-water-422354"
     }
 ]

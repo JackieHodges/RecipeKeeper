@@ -6,6 +6,7 @@ import ListedResults from "./listedResults";
 function SearchRecipe() {
 
     const [show, setShow] = useState(false);
+    const [recipeLocation, setRecipeLocation] = useState(null);
     const [searchResults, setSearchResults] = useState([]);
 
     const handleShow = () => setShow(true);
@@ -45,15 +46,25 @@ function SearchRecipe() {
     function onClick(event) {
         event.preventDefault();
         let newRecipeName = document.getElementById("newFormRecipe").value;
-        let newRecipeURL = document.getElementById("newFormRecipeURL").value;
+        let newRecipeMedia = recipeLocation;
+        let newRecipeLocation = document.getElementById("newFormRecipeLocation").value;
 
-        API.addNewRecipe({
-            recipe_name: newRecipeName,
-            recipe_url: newRecipeURL
-        })
-            .then(handleClose())
-            .then(loadAllRecipes())
-            .catch(err => console.log(err));
+        if (!newRecipeMedia || !newRecipeName || !newRecipeLocation) {
+            alert("Please ensure you have completed the entire form")
+        } else {
+            API.addNewRecipe({
+                recipe_name: newRecipeName,
+                recipe_media: newRecipeMedia,
+                recipe_location: newRecipeLocation
+            })
+                .then(handleClose())
+                .then(loadAllRecipes())
+                .catch(err => console.log(err));
+        }
+    }
+
+    function changeRecipeLocation(event) {
+        setRecipeLocation(event.target.id);
     }
 
     return (
@@ -112,9 +123,36 @@ function SearchRecipe() {
                             </Form.Text>
                         </Form.Group> */}
 
-                        <Form.Group controlId="newFormRecipeURL">
-                            <Form.Label>Recipe URL</Form.Label>
-                            <Form.Control type="text" placeholder="Recipe URL" />
+                        <Form.Group controlId="mediaType" onChange={changeRecipeLocation}>
+                            <Form.Label>Recipe Location</Form.Label>
+                            <div>
+                                <Form.Check
+                                    inline
+                                    type="radio"
+                                    name="recipeOptions"
+                                    label="Website"
+                                    id="website"
+                                />
+                                <Form.Check
+                                    inline
+                                    type="radio"
+                                    name="recipeOptions"
+                                    label="Cookbook"
+                                    id="cookbook"
+                                />
+                                <Form.Check
+                                    inline
+                                    type="radio"
+                                    name="recipeOptions"
+                                    label="Other"
+                                    id="other"
+                                />
+                            </div>
+                        </Form.Group>
+
+                        <Form.Group controlId="newFormRecipeLocation">
+                            <Form.Label>Recipe URL, Cookbook Name, or Other</Form.Label>
+                            <Form.Control type="text" />
                         </Form.Group>
                     </Form>
                 </Modal.Body>
